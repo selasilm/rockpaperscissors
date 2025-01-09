@@ -60,4 +60,8 @@ function playRound(human,computer){
             alert(`it's a draw`);
         }
     }
+    console.log(`computer score: ${computerScore}`)
+    console.log(`human score: ${humanScore}`);
 }
+
+playRound(getComputerChoice(),getHumanChoice());
