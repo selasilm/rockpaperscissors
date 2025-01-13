@@ -1,6 +1,7 @@
 let rounds = prompt(`Select the number of rounds to be played`);
 let humanScore = 0;
 let computerScore = 0;
+
 function getComputerChoice(){
     let computerChoice;
     let num = Math.random();
@@ -14,6 +15,7 @@ function getComputerChoice(){
     console.log(`computer choice: ${computerChoice}`);
     return computerChoice;
 }
+
 function getHumanChoice(){
     let humanChoice = prompt('type r(rock),p(paper) or s(scissors):');
     if (humanChoice.toLowerCase() ==='r'){
