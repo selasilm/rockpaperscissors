@@ -11,7 +11,7 @@ function getComputerChoice(){
     }else{
         computerChoice='scissors';
     }
-    console.log(computerChoice);
+    console.log(`computer choice: ${computerChoice}`);
     return computerChoice;
 }
 function getHumanChoice(){
@@ -26,39 +26,40 @@ function getHumanChoice(){
         alert(`you chose ${humanChoice} for scissors`);
         humanChoice= 'scissors';
     }
+    console.log(`human choice:${humanChoice}`);
     return humanChoice;
 }
 
 function playRound(human,computer){
     if (human==='rock'){
         if (computer === 'rock'){
-            alert(`it's a draw`);
+            alert(`computer chose rock: it's a draw`);
         } else if (computer === 'paper'){
-            alert(`paper beats rock, computer wins`);
+            alert(`computer chose paper: paper beats rock, computer wins`);
             computerScore +=1;
         } else {
-            alert(`rock beats scissors, human wins`);
+            alert(`computer chose scissors:rock beats scissors, human wins`);
             humanScore +=1;
         }
     } else if (human ==='paper'){
         if (computer === 'rock'){
-            alert(`paper beats rock, human wins`);
+            alert(`computer chose rock: paper beats rock, human wins`);
             humanScore +=1;
         } else if (computer === 'paper'){
-            alert(`it's a draw`);
+            alert(`computer chose paper: it's a draw`);
         } else {
-            alert(`scissors beats paper, computer wins`);
+            alert(`computer chose scissors: scissors beats paper, computer wins`);
             computerScore +=1;
         }
     }else{
         if (computer === 'rock'){
-            alert(`rock beats scissors, computer wins`);
+            alert(`computer chose rock: rock beats scissors, computer wins`);
             computerScore +=1;
         } else if (computer === 'paper'){
-            alert(`scissors beats paper, human wins`);
+            alert(`computer chose paper: scissors beats paper, human wins`);
             humanScore +=1;
         } else {
-            alert(`it's a draw`);
+            alert(`computer chose scissors: it's a draw`);
         }
     }
     console.log(`computer score: ${computerScore}`)
@@ -67,7 +68,7 @@ function playRound(human,computer){
 
 function playgame(roundNo){
     for (let i =0;i<roundNo;i++){
-        playRound(getComputerChoice(),getHumanChoice());
+        playRound(getHumanChoice(),getComputerChoice());
     }
     alert(`computer score:${computerScore}`);
     alert(`human score: ${humanScore}`);
