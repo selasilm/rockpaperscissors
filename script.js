@@ -1,3 +1,4 @@
+let rounds = prompt(`Select the number of rounds to be played`);
 let humanScore = 0;
 let computerScore = 0;
 function getComputerChoice(){
@@ -65,7 +66,6 @@ function playRound(human,computer){
 }
 
 function playgame(rounds){
-    let rounds = prompt(`Select the number of rounds to be played`);
     for (let i =0;i<rounds;i++){
         playRound(getComputerChoice(),getHumanChoice())
     }
