@@ -65,12 +65,12 @@ function playRound(human,computer){
     console.log(`human score: ${humanScore}`);
 }
 
-function playgame(rounds){
-    for (let i =0;i<rounds;i++){
-        playRound(getComputerChoice(),getHumanChoice())
+function playgame(roundNo){
+    for (let i =0;i<roundNo;i++){
+        playRound(getComputerChoice(),getHumanChoice());
     }
     alert(`computer score:${computerScore}`);
     alert(`human score: ${humanScore}`);
 }
 
-playgame();
+playgame(rounds);
