@@ -64,4 +64,13 @@ function playRound(human,computer){
     console.log(`human score: ${humanScore}`);
 }
 
-playRound(getComputerChoice(),getHumanChoice());
+function playgame(rounds){
+    let rounds = prompt(`Select the number of rounds to be played`);
+    for (let i =0;i<rounds;i++){
+        playRound(getComputerChoice(),getHumanChoice())
+    }
+    alert(`computer score:${computerScore}`);
+    alert(`human score: ${humanScore}`);
+}
+
+playgame();
