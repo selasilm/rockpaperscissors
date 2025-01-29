@@ -2,6 +2,8 @@
 let humanScore = 0;
 let computerScore = 0;
 let humanChoice='';
+const content = document.querySelector('#scores');
+
 
 function getComputerChoice(){
     let computerChoice;
@@ -15,22 +17,6 @@ function getComputerChoice(){
     }
     console.log(`computer choice: ${computerChoice}`);
     return computerChoice;
-}
-
-function getHumanChoice(){
-    let humanChoice = prompt('type r(rock),p(paper) or s(scissors):');
-    if (humanChoice.toLowerCase() ==='r'){
-        alert(`you typed ${humanChoice} for rock`);
-        humanChoice = 'rock';
-    }else if (humanChoice.toLowerCase()==='p'){
-        alert(`you chose ${humanChoice} for paper`);
-        humanChoice = 'paper';
-    }else if (humanChoice.toLowerCase()==='s'){
-        alert(`you chose ${humanChoice} for scissors`);
-        humanChoice= 'scissors';
-    }
-    console.log(`human choice:${humanChoice}`);
-    return humanChoice;
 }
 
 function playRound(human,computer){
@@ -77,21 +63,18 @@ function playgame(roundNo){
     alert(`human score: ${humanScore}`);
 }
 
-//playgame(rounds);
-
-const btn_rock = document.querySelector('#rock');
-const btn_paper = document.querySelector('#paper');
-const btn_scissors = document.querySelector('#scissors');
-
 const buttons = document.querySelectorAll('button');
+const br = document.createElement('br');
 
 buttons.forEach((button) => {
     button.addEventListener("click",()=>{
         humanChoice = button.id;
         alert(`${humanChoice} selected`);
-        playRound(humanChoice,getComputerChoice());
+        playRound(humanChoice,getComputerChoice());    
+        content.textContent += `human score:${humanScore} | computer score:${computerScore}<br>`
     })
 })
+
 /*
 console.log(btn_rock);
 btn_rock.addEventListener("click",()=>{
