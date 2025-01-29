@@ -1,6 +1,7 @@
-let rounds = prompt(`Select the number of rounds to be played`);
+//let rounds = prompt(`Select the number of rounds to be played`);
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice='';
 
 function getComputerChoice(){
     let computerChoice;
@@ -76,4 +77,15 @@ function playgame(roundNo){
     alert(`human score: ${humanScore}`);
 }
 
-playgame(rounds);
+//playgame(rounds);
+
+const btn_rock = document.querySelector('#rock');
+const btn_paper = document.querySelector('#paper');
+const btn_scissors = document.querySelector('#scissors');
+
+console.log(btn_rock);
+btn_rock.addEventListener("click",()=>{
+    alert('rock selected');
+    humanChoice = 'rock';
+    playRound(humanChoice,getComputerChoice());
+})
