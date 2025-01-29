@@ -83,9 +83,20 @@ const btn_rock = document.querySelector('#rock');
 const btn_paper = document.querySelector('#paper');
 const btn_scissors = document.querySelector('#scissors');
 
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener("click",()=>{
+        humanChoice = button.id;
+        alert(`${humanChoice} selected`);
+        playRound(humanChoice,getComputerChoice());
+    })
+})
+/*
 console.log(btn_rock);
 btn_rock.addEventListener("click",()=>{
     alert('rock selected');
     humanChoice = 'rock';
     playRound(humanChoice,getComputerChoice());
 })
+*/
